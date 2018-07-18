@@ -13,13 +13,13 @@ Requirements:
 <p> Download Ganache at https://truffleframework.com/ganache </br> 
 
     You can use truffle framework to deploy the smart contract
-    but I used the remix solidity IDE to deploy the sc to a personal ethereum blockchain.
+    but I used the remix solidity IDE to deploy the sc to a personal ethereum blockchain provided by ganache.
     On http://remix.ethereum.org go to run and in environment select Web3 Provider,
     use the localhost provided by ganache HTTP://127.0.0.1:7545. Copy the contract address and past 
     it on /scr/contract/ContractConnection.js
 </p>
 
-###### Then run:
+#### Then run:
 
 ```
  $ npm install
