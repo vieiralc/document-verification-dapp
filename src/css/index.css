@@ -1,0 +1,67 @@
+/*Document Submission CSS*/
+
+.cb_address {
+    color: #fff
+}
+
+.cb_address:hover {
+    color: #31AFA1
+}
+
+#my_title {
+    color: #fff
+}
+
+#my_title:hover {
+    color: #31AFA1
+}
+
+#my_table {
+    margin-top: 5%;
+}
+
+#myForm {
+    margin-top: 5%;
+}
+
+.visibility {
+    visibility: hidden;
+}
+
+#myProgress {
+    border-radius: 5px;
+    width: 100%;
+    background-color: lightgray;
+}
+#myBar {
+    border-radius: 5px;
+    width: 1%;
+    height: 15px;
+    background-color: #31AFA1;
+}
+
+
+/* Chain Animation CSS */
+
+#card{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.item-box {
+    padding-left: 10px;
+}
+
+.item-title {
+    font-weight: bold;
+}
+
+.item {
+    margin-left: 10px;
+}
+
+.vertical-scroll {
+    width: 325px;
+    height: 800px;
+    overflow-y: auto;
+}

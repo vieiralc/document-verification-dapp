@@ -1,0 +1,129 @@
+[
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "destroy",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "hash",
+				"type": "bytes32"
+			}
+		],
+		"name": "newDocument",
+		"outputs": [
+			{
+				"name": "success",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "creator",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "hash",
+				"type": "bytes32"
+			}
+		],
+		"name": "documentExists",
+		"outputs": [
+			{
+				"name": "exists",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "documentHashMap",
+		"outputs": [
+			{
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"name": "blockTimestamp",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "hash",
+				"type": "bytes32"
+			}
+		],
+		"name": "getDocument",
+		"outputs": [
+			{
+				"name": "blockTimestamp",
+				"type": "uint256"
+			},
+			{
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "numDocuments",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
