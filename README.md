@@ -8,7 +8,7 @@ Requirements:
   <li> Ganache </li>
 </ul>
 
-###### To install:
+#### To install:
 
 <p> Download Ganache at https://truffleframework.com/ganache </br> 
 
