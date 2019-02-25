@@ -1,10 +1,10 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.0;
 
 contract DocVerify {
     
     struct Document {
         address owner;
-        uint blockTimestamp;
+        uint date;
     }
     
     address public creator;
@@ -22,7 +22,7 @@ contract DocVerify {
         }else {
             Document storage d = documentHashMap[hash];
             d.owner = msg.sender;
-            d.blockTimestamp = block.timestamp;
+            d.date = now;
             numDocuments++;
             success = true;
         }
@@ -30,7 +30,7 @@ contract DocVerify {
     }
     
     function documentExists(bytes32 hash) public view returns (bool exists) {
-        if (documentHashMap[hash].blockTimestamp > 0) {
+        if (documentHashMap[hash].date > 0) {
             exists = true;
         } else {
             exists = false;
@@ -38,15 +38,12 @@ contract DocVerify {
         return exists;
     }
     
-    function getDocument(bytes32 hash) public view returns (uint blockTimestamp, address owner) {
-        blockTimestamp = documentHashMap[hash].blockTimestamp;
+    function getDocument(bytes32 hash) public view returns (uint date, address owner) {
+        date = documentHashMap[hash].date;
         owner = documentHashMap[hash].owner;
     }
-    
-    function destroy() public {
-        if(msg.sender == creator) {
-            selfdestruct(creator);
-        }
+
+    function getNumDocs() public view returns (uint numDocs) {
+        return numDocuments;
     }
-    
 }

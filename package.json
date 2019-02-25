@@ -1,25 +1,28 @@
 {
-  "name": "doc_verify",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "react-scripts": "1.1.4"
-  },
-  "dependencies": {
-    "crypto-js": "^3.1.9-1",
-    "jquery": "^3.3.1",
-    "object-hash": "^1.3.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1",
-    "react-spinners": "^0.3.2",
-    "semantic-ui-react": "^0.82.0",
-    "web3": "^0.20.0"
-  },
+  "name": "doc-verify",
+  "version": "1.0.0",
+  "description": "document verification dapp",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vieiralc/document-verification-dapp.git"
+  },
+  "keywords": [
+    "dapp",
+    "ethereum",
+    "blockchain"
+  ],
+  "author": "Lucas Vieira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vieiralc/document-verification-dapp/issues"
+  },
+  "homepage": "https://github.com/vieiralc/document-verification-dapp#readme",
+  "dependencies": {
+    "object-hash": "^1.3.1",
+    "truffle": "^5.0.4"
   }
 }

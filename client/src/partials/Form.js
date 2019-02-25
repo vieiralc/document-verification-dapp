@@ -1,36 +1,44 @@
-import React, { Component } from 'react'
-import Hash from 'object-hash'
-import $ from 'jquery'
+import React, { Component } from 'react';
+import Hash from 'object-hash';
+import $ from 'jquery';
 
 export default class Form extends Component {
-    
+
     constructor() {
-        super()
+        super();
         this.state = {
             fileName: null,
             file: null,
             fileHash: null
-        }
+        };
+
+        this.onNameChange = this.onNameChange.bind(this);
+        this.onFileChange = this.onFileChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    };
+
+    onNameChange(event) { 
+        this.setState({fileName: event.target.value});
     }
 
-    onNameChange = event => this.setState({fileName: event.target.value})
-
-    onFileChange = event => this.setState({file: event.target.files[0]})
-
-    onFormSubmit = event => {
-        event.preventDefault()
+    onFileChange(event) { 
+        this.setState({file: event.target.files[0]});
+    }
+    
+    onSubmit(event) {
+        event.preventDefault();
 
         if (!this.state.file) {
-            alert('Please upload a file')
-            return
+            alert('Please upload a file');
+            return;
         }
 
-        $('#myProgress').removeClass('visibility')
+        $('#myProgress').removeClass('visibility');
 
-        let elem = document.getElementById('myBar') 
+        let elem = document.getElementById('myBar');
         let width = 1;
         let id = setInterval(frame, 10);
-        
+
         function frame() {
             if (width >= 100) {
                 clearInterval(id);
@@ -39,28 +47,28 @@ export default class Form extends Component {
                 elem.style.width = width + '%'; 
             }
         }
-        
+
         setTimeout(() => {
             let file = this.state.file
             let reader = new FileReader()
 
             reader.onload = (event) => {
                 let hash = Hash(event.target.result)
-                this.setState({fileHash: hash})
-                $('#fileHash').html(this.state.fileHash)
+                this.setState({fileHash: this.props.web3.utils.asciiToHex(hash)})
+                $('#fileHash').html(this.state.fileHash.substring(0,40))
                 $('#fileName').html(this.state.fileName)
             }
 
             reader.readAsBinaryString(file)
         }, 2000)
-    }
-
+    };
+  
     render() {
-        return(
+        return (
             <div className='row justify-content-center'>
                 <div className='col-md-8'>
 
-                    <form onSubmit={event => this.onFormSubmit(event)} id='myForm'>
+                    <form onSubmit={event => this.onSubmit(event)} id='myForm'>
                         <div className="input-field">
                             <input id="name" type="text" className="validate" onChange={event => this.onNameChange(event)}/>
                             <label htmlFor="name">File Name</label>
