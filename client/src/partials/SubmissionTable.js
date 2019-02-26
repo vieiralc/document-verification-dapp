@@ -5,22 +5,28 @@ class SubmissionTable extends Component {
 
     componentDidMount() {
         this.props.contract.methods.getNumDocs().call({ from: this.props.accounts[0]} )
-            .then(numDocs => $('#numDocs').html(numDocs));
+            .then(numDocs => {
+                console.log('numDocs: '+numDocs);
+                $('#numDocs').html(numDocs);
+            });
     }
 
     submitDocument = event => {
-        $('#status').html('Submitting document, please wait...')
+        $('#status').html('Submitting document, please wait...');
         
         setTimeout(async () => {
             let hash = $('#fileHash').text()
-
+            console.log('hash: '+hash);
             const { contract, accounts } = this.props;
-
+            console.log('contract add: '+contract.options.address);
             await contract.methods.newDocument(hash).send({ from: accounts[0] })
                 .then(res => {
                     $('#status').html('Document hash submitted')
                 })
-                .catch(err =>  $('#status').html('Error in submitting document hash'))
+                .catch(err =>  {
+                    console.log(err.message);
+                    $('#status').html('Error in submitting document hash')
+                })
 
             contract.methods.getNumDocs().call({from: accounts[0]})
                 .then(numDocs => {
