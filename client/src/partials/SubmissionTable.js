@@ -41,8 +41,10 @@ class SubmissionTable extends Component {
             
             const { contract, accounts } = this.props;
 
-            await contract.methods.documentExists(hash).send({ from: accounts[0]})
+            await contract.methods.documentExists(hash)
                 .then(res => {
+                    console.log(typeof(res))
+                    console.log(res)
                     if (res) {
                         $('#status').html('Document Verified');
                     }
