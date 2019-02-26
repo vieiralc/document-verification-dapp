@@ -86,10 +86,7 @@ class SubmissionTable extends Component {
         const sec = date.getSeconds().toString();
         const secf = sec.length === 1 ? '0'+sec : sec;
 
-        const mili = date.getMilliseconds().toString();
-        const milif = mili.length === 1 ? '0'+mili : mili;
-
-        date = `${monthf}/${dayf}/${yearF} - ${hourf}h${minf}min${secf}sec:${milif}mili`;
+        date = `${monthf}/${dayf}/${yearF} - ${hourf}h${minf}min${secf}sec`;
         return date;
     }
 
