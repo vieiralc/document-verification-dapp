@@ -27,6 +27,7 @@ export default class Form extends Component {
     
     onSubmit(event) {
         event.preventDefault();
+        const { web3 } = this.props;
 
         if (!this.state.file) {
             alert('Please upload a file');
@@ -53,10 +54,10 @@ export default class Form extends Component {
             let reader = new FileReader()
 
             reader.onload = (event) => {
-                let hash = Hash(event.target.result)
-                this.setState({fileHash: this.props.web3.utils.fromAscii(hash)})
-                $('#fileHash').html(this.state.fileHash.substring(0,40))
-                $('#fileName').html(this.state.fileName)
+                let hash = Hash(event.target.result);
+                this.setState({fileHash: web3.utils.asciiToHex(hash)});
+                $('#fileHash').html(this.state.fileHash);
+                $('#fileName').html(this.state.fileName);
             }
 
             reader.readAsBinaryString(file)
