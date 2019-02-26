@@ -12,7 +12,7 @@ module.exports = {
     ropsten: {
       provider: function() {
         return new HDWalletProvider(
-          procces.env.MNEMONIC,
+          process.env.MNEMONIC,
           `https://ropsten.infura.io/v3/${process.env.infuraKey}`
         );
       },
