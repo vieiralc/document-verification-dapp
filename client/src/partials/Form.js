@@ -54,7 +54,7 @@ export default class Form extends Component {
 
             reader.onload = (event) => {
                 let hash = Hash(event.target.result)
-                this.setState({fileHash: this.props.web3.utils.asciiToHex(hash)})
+                this.setState({fileHash: this.props.web3.utils.fromAscii(hash)})
                 $('#fileHash').html(this.state.fileHash.substring(0,40))
                 $('#fileName').html(this.state.fileName)
             }
