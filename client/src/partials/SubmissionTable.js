@@ -5,10 +5,8 @@ class SubmissionTable extends Component {
 
     componentDidMount() {
         this.props.contract.methods.getNumDocs().call({ from: this.props.accounts[0]} )
-            .then(numDocs => {
-                console.log(typeof(numDocs));
-                console.log(numDocs);
-                $('#numDocs').html(numDocs[0]);
+            .then(res => {
+                $('#numDocs').html(res.numDocs);
             });
     }
 
