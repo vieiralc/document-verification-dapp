@@ -75,7 +75,7 @@ class App extends Component {
       <div className="App">
         <Header cbAddress={this.state.web3.eth.defaultAccount}/>
           <div className="row justify-content-center">
-            <div className="col-md-8">
+            <div className="col-md-12">
               <InfoTable 
                 sm_address={this.state.contract.options.address}
                 cb_balance={this.state.balance}
