@@ -41,7 +41,7 @@ class App extends Component {
 
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
-      if (networkId === 4447) {
+      if (networkId === 3) {
         this.setState({ web3, accounts, contract: instance }, this.getUserBalance);
       } else {
         this.setState({ correctNetwork: false });
