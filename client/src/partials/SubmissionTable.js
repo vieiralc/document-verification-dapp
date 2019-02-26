@@ -40,7 +40,7 @@ class SubmissionTable extends Component {
             let hash = $('#fileHash').text();
             
             const { contract, accounts } = this.props;
-
+            console.log('contract address', contract.options.address);
             await contract.methods.documentExists(hash)
                 .then(res => {
                     console.log(typeof(res))
