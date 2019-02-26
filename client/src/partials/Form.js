@@ -9,7 +9,6 @@ export default class Form extends Component {
         this.state = {
             fileName: null,
             file: null,
-            fileHash: null
         };
 
         this.onNameChange = this.onNameChange.bind(this);
@@ -55,8 +54,8 @@ export default class Form extends Component {
 
             reader.onload = (event) => {
                 let hash = Hash(event.target.result);
-                this.setState({fileHash: web3.utils.asciiToHex(hash)});
-                $('#fileHash').html(this.state.fileHash);
+                let hashf = web3.utils.toHex(hash);
+                $('#fileHash').html(hashf);
                 $('#fileName').html(this.state.fileName);
             }
 
