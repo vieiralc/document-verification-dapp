@@ -8,7 +8,7 @@ class SubmissionTable extends Component {
             .then(numDocs => {
                 console.log(typeof(numDocs));
                 console.log(numDocs);
-                $('#numDocs').html(numDocs);
+                $('#numDocs').html(numDocs[0]);
             });
     }
 
