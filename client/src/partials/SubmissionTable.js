@@ -4,9 +4,8 @@ import $ from 'jquery';
 class SubmissionTable extends Component {
 
     componentDidMount() {
-        this.props.contract.methods.getNumDocs().call((err, numDocuments) => {
-            $("#numDocs").html(numDocuments);
-        })
+        this.props.contract.methods.getNumDocs().call({ from: this.props.accounts[0]} )
+            .then(numDocs => $('#numDocs').html(numDocs));
     }
 
     submitDocument = event => {
